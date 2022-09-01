@@ -483,12 +483,13 @@ def _merge_a_into_b(a, b, root, key_list):
         elif b.is_new_allowed():
             b[k] = v
         else:
-            if root.key_is_deprecated(full_key):
-                continue
-            elif root.key_is_renamed(full_key):
-                root.raise_key_rename_error(full_key)
-            else:
-                raise KeyError("Non-existent config key: {}".format(full_key))
+            print('Error occured while joining config files')
+            # if root.key_is_deprecated(full_key):
+            #     continue
+            # elif root.key_is_renamed(full_key):
+            #     root.raise_key_rename_error(full_key)
+            # else:
+            #     raise KeyError("Non-existent config key: {}".format(full_key))
 
 
 def _check_and_coerce_cfg_value_type(replacement, original, key, full_key):
